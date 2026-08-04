@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes marquee {
+
+    from {
+
+        transform: translateX(100%);
+
+    }
+
+    to {
+
+        transform: translateX(-100%);
+
+    }
+
+}
+
+.animate-marquee {
+
+    display: inline-block;
+
+    animation: marquee 25s linear infinite;
+
+}
+/* ==========================
+   Top Bar Marquee
+========================== */
+
+.marquee{
+
+    display:inline-flex;
+
+    min-width:max-content;
+
+    animation:marqueeMove 28s linear infinite;
+
+}
+
+.marquee:hover{
+
+    animation-play-state:paused;
+
+}
+
+@keyframes marqueeMove{
+
+    from{
+
+        transform:translateX(100%);
+
+    }
+
+    to{
+
+        transform:translateX(-100%);
+
+    }
+
+}
