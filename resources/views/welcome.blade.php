@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>The Ocean Series</title>
 
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @vite(['resources/css/app.css','resources/js/app.js'])
+
 </head>
 
-<body>
+<body class="bg-gray-100">
 
     @include('components.navbar')
 
@@ -28,5 +33,8 @@
 
     @include('components.footer')
 
+    @include('components.welcome-popup')
+
 </body>
+
 </html>
