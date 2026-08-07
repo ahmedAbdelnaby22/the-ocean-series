@@ -1,13 +1,43 @@
 @extends('layouts.app')
 
+@section('title', 'سلسلة المحيط 2027 | منصة مستر عبدالسلام رضوان')
+
 @section('content')
 
-@include('components.welcome-popup')
+    {{-- الرسالة الترحيبية --}}
+    @include('components.welcome-popup')
 
-@include('components.topbar')
+    {{-- الشريط العلوي --}}
+    @include('components.topbar')
 
-@include('components.navbar')
+    {{-- شريط التنقل --}}
+    @include('components.navbar')
 
-@include('components.hero')
+    {{-- شريط الأخبار --}}
+    @include('components.news-ticker')
+
+    {{-- Hero --}}
+    @include('components.hero')
+
+    {{-- من نحن --}}
+    @include('components.about')
+
+    {{-- المميزات --}}
+    @include('components.features')
+
+    {{-- المجموعات --}}
+    @include('components.groups')
+
+    {{-- معرض الصور --}}
+    @include('components.gallery')
+
+    {{-- الأخبار --}}
+    @include('components.news')
+
+    {{-- اتصل بنا --}}
+    @include('components.contact')
+
+    {{-- Footer --}}
+    @include('components.footer')
 
 @endsection

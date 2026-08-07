@@ -1,62 +1,158 @@
-<div class="overflow-hidden bg-[#062f47] border-b border-[#f6c951]/20 text-white">
+{{-- resources/views/components/topbar.blade.php --}}
+{{-- شريط الأخبار العلوي (ماركيه) --}}
+<div 
+    role="complementary" 
+    aria-label="شريط الأخبار العاجلة" 
+    class="relative z-50 overflow-hidden bg-[#062f47] border-b border-[#f6c951]/20 text-white shadow-sm"
+>
+    {{-- حاوية الماركيه --}}
+    <div class="marquee-wrapper overflow-hidden py-2 md:py-3">
+        <div class="marquee flex items-center whitespace-nowrap text-sm md:text-base lg:text-lg font-semibold animate-marquee">
 
-    <div class="marquee flex items-center whitespace-nowrap py-3 text-lg font-semibold">
-
-        <span class="mx-10 flex items-center gap-2">
-            🌟 مرحباً بكم في منصتي القمة التعليمية
-            <span class="font-bold text-[#f6c951]">
-                Mr. Abdel Salam Radwan
+            {{-- 1. الترحيب --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                🌊
+                <span>مرحباً بكم في</span>
+                <span class="font-bold text-[#f6c951]">THE OCEAN SERIES 2027</span>
+                <span>مع</span>
+                <span class="font-bold text-[#f6c951]">Mr. Abdel Salam Radwan</span>
             </span>
-        </span>
 
-        <span class="mx-10 flex items-center gap-2">
-            🏆 خبرة 8 سنوات من العطاء والخبرة والتقدم بفضل الله
-        </span>
+            {{-- 2. الخبرة --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                🏆
+                <span>خبرة أكثر من <strong class="text-[#f6c951]">8 سنوات</strong> في تدريس اللغة الإنجليزية</span>
+            </span>
 
-        <span class="mx-10 flex items-center gap-2">
-            📍 البلينا - سوهاج - مصر
-        </span>
+            {{-- 3. الكتاب --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                📚
+                <span>سلسلة المحيط 2027 - كتاب الشرح والتدريبات</span>
+            </span>
 
-        <span class="mx-10 flex items-center gap-2">
+            {{-- 4. الامتحانات --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                🎯
+                <span>لا يخرج عنها أي امتحان بإذن الله</span>
+            </span>
 
-            <i class="fa-solid fa-envelope text-[#f6c951]"></i>
+            {{-- 5. الموقع --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                📍
+                <span>البلينا - سوهاج - جمهورية مصر العربية</span>
+            </span>
 
-            <a href="mailto:abdohanafi011111@gmail.com"
-               class="hover:text-[#f6c951] transition">
+            {{-- 6. البريد الإلكتروني --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-[#f6c951]"></i>
+                <a 
+                    href="mailto:abdohanafi011111@gmail.com" 
+                    class="hover:text-[#f6c951] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#f6c951] focus:ring-offset-2 focus:ring-offset-[#062f47] rounded px-1"
+                    aria-label="إرسال بريد إلكتروني إلى abdohanafi011111@gmail.com"
+                >
+                    abdohanafi011111@gmail.com
+                </a>
+            </span>
 
-                abdohanafi011111@gmail.com
+            {{-- 7. فيسبوك --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                <i class="fa-brands fa-facebook text-[#1877F2] text-xl"></i>
+                <a 
+                    href="https://www.facebook.com/share/19EzddwcQG/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="hover:text-[#1877F2] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 focus:ring-offset-[#062f47] rounded px-1"
+                    aria-label="زيارة صفحتنا على فيسبوك"
+                >
+                    Facebook
+                </a>
+            </span>
 
-            </a>
+            {{-- 8. واتساب 1 --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-[#25D366] text-xl"></i>
+                <a 
+                    href="https://wa.me/2011111168104" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="hover:text-[#25D366] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-[#062f47] rounded px-1"
+                    aria-label="تواصل معنا عبر واتساب على الرقم 01111168104"
+                >
+                    01111168104
+                </a>
+            </span>
 
-        </span>
+            {{-- 9. واتساب 2 --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-[#25D366] text-xl"></i>
+                <a 
+                    href="https://wa.me/201027635545" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="hover:text-[#25D366] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-[#062f47] rounded px-1"
+                    aria-label="تواصل معنا عبر واتساب على الرقم 01027635545"
+                >
+                    01027635545
+                </a>
+            </span>
 
-        <span class="mx-10 flex items-center gap-2">
+            {{-- 10. اتصال هاتفي --}}
+            <span class="mx-6 md:mx-10 lg:mx-12 flex items-center gap-2">
+                <i class="fa-solid fa-phone text-[#f6c951]"></i>
+                <a 
+                    href="tel:+2011111168104" 
+                    class="hover:text-[#f6c951] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#f6c951] focus:ring-offset-2 focus:ring-offset-[#062f47] rounded px-1"
+                    aria-label="الاتصال بنا على الرقم 01111168104"
+                >
+                    اتصل الآن
+                </a>
+            </span>
 
-            <i class="fa-brands fa-facebook text-[#1877F2]"></i>
-
-            <a href="https://www.facebook.com/share/19EzddwcQG/"
-               target="_blank"
-               class="hover:text-[#f6c951] transition">
-
-                Facebook
-
-            </a>
-
-        </span>
-
-        <span class="mx-10 flex items-center gap-2">
-
-            <i class="fa-brands fa-whatsapp text-[#25D366]"></i>
-
-            <a href="#"
-               class="hover:text-[#f6c951] transition">
-
-                WhatsApp
-
-            </a>
-
-        </span>
-
+        </div>
     </div>
-
 </div>
+
+{{-- تضمين CSS المخصص للحركة --}}
+<style>
+    /* تعليق: حركة الماركيه مستمرة مع تحسين الأداء */
+    .animate-marquee {
+        animation: marquee-scroll 40s linear infinite;
+        will-change: transform;
+    }
+
+    @keyframes marquee-scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* إيقاف الحركة مؤقتاً عند التمرير فوقها (تحسين UX) */
+    .marquee-wrapper:hover .animate-marquee {
+        animation-play-state: paused;
+    }
+
+    /* تحسين الوصولية: تقليل الحركة لمن يفضلون ذلك */
+    @media (prefers-reduced-motion: reduce) {
+        .animate-marquee {
+            animation: none;
+            transform: translateX(0);
+        }
+        .marquee-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        .marquee-wrapper:hover .animate-marquee {
+            animation-play-state: running;
+        }
+    }
+
+    /* تحسين التركيز لعناصر الوصول */
+    .focus\:ring-offset-2:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #062f47, 0 0 0 4px #f6c951;
+    }
+</style>

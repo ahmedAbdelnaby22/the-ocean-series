@@ -1,105 +1,80 @@
-import './bootstrap';
-import '../css/app.css';
+// resources/js/app.js
 
-/*
-|--------------------------------------------------------------------------
-| THE OCEAN SERIES
-|--------------------------------------------------------------------------
-*/
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();
 
-window.addEventListener("load", () => {
+console.log('✅ Alpine.js تم تحميله بنجاح');
 
-    // ==========================
-    // Welcome Popup
-    // ==========================
+// =============================================
+// تفعيل Intersection Observer للعناصر
+// =============================================
+document.addEventListener('DOMContentLoaded', () => {
+    // ===== Fade Up =====
+    const fadeElements = document.querySelectorAll('.fade-up, .reveal');
 
-    const popup = document.getElementById("welcomePopup");
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show', 'visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
-    if (popup) {
-
-        popup.style.opacity = "0";
-
-        popup.style.display = "flex";
-
-        setTimeout(() => {
-
-            popup.style.transition = "0.8s";
-
-            popup.style.opacity = "1";
-
-        }, 200);
-
+        fadeElements.forEach((el) => {
+            observer.observe(el);
+        });
+    } else {
+        // Fallback للمتصفحات القديمة
+        fadeElements.forEach((el) => {
+            el.classList.add('show', 'visible');
+        });
     }
 
-});
+    // ===== Counter Animation =====
+    const counters = document.querySelectorAll('.counter');
 
+    if ('IntersectionObserver' in window) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.dataset.target) || 0;
+                    let current = 0;
+                    const increment = Math.max(1, target / 60);
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            entry.target.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = Math.floor(current) + '+';
+                        }
+                    }, 25);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
 
-// ==========================
-// Close Popup
-// ==========================
-
-window.closeWelcome = function () {
-
-    const popup = document.getElementById("welcomePopup");
-
-    if (!popup) return;
-
-    popup.style.opacity = "0";
-
-    setTimeout(() => {
-
-        popup.style.display = "none";
-
-    }, 500);
-
-};
-
-
-// ==========================
-// Fade Animation
-// ==========================
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-});
-
-document.querySelectorAll(".fade-up").forEach((el) => {
-
-    observer.observe(el);
-
-});
-
-
-// ==========================
-// Smooth Scroll
-// ==========================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (!target) return;
-
-        e.preventDefault();
-
-        target.scrollIntoView({
-
-            behavior: "smooth"
-
+        counters.forEach((el) => {
+            counterObserver.observe(el);
         });
-
-    });
-
+    } else {
+        // Fallback
+        counters.forEach((el) => {
+            el.textContent = el.dataset.target + '+';
+        });
+    }
 });
+
+// =============================================
+// التعامل مع الأخطاء العامة
+// =============================================
+window.addEventListener('error', function(e) {
+    console.warn('⚠️ تم تجاوز خطأ:', e.message);
+    // منع تعطل الصفحة بسبب أي خطأ
+    return true;
+});
+
+console.log('✅ app.js تم تحميله بنجاح');

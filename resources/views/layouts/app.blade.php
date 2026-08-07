@@ -1,22 +1,108 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<link
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Essential Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'THE OCEAN SERIES 2027')</title>
+    <!-- Dynamic Title & Primary Meta Tags -->
+    <title>@yield('title', 'سلسلة المحيط 2027 | منصة مستر عبد السلام رضوان للغة الإنجليزية')</title>
+    <meta name="title" content="@yield('title', 'سلسلة المحيط 2027 | منصة مستر عبد السلام رضوان للغة الإنجليزية')">
+    <meta name="description" content="@yield('description', 'المنصة الرسمية لسلسلة المحيط 2027 للأستاذ عبد السلام رضوان. دورات لغة إنجليزية تفاعلية، كتاب الشرح والتدريبات، واختبارات لضمان التفوق والوصول للقمة.')">
+    <meta name="keywords" content="@yield('keywords', 'سلسلة المحيط 2027, مستر عبد السلام رضوان, The Ocean Series 2027, تعلم اللغة الإنجليزية, ثانوية عامة إنجليزي')">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Arabic">
+    <meta name="author" content="Ahmed Abdelnaby">
+    <link rel="canonical" href="{{ url()->current() }}">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('assets/images/logo/logo.png') }}">
+
+    <!-- Open Graph / Facebook & WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="سلسلة المحيط 2027 | مستر عبد السلام رضوان">
+    <meta property="og:description" content="طريقك للقمة في اللغة الإنجليزية مع مستر عبد السلام رضوان. انضم الآن وتصفح المحاضرات والكتب.">
+    <meta property="og:image" content="{{ asset('assets/images/og-image.jpg') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="سلسلة المحيط 2027 | مستر عبد السلام رضوان">
+    <meta name="twitter:description" content="طريقك للقمة في اللغة الإنجليزية مع مستر عبد السلام رضوان. انضم الآن وتصفح المحاضرات والكتب.">
+    <meta name="twitter:image" content="{{ asset('assets/images/og-image.jpg') }}">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Structured Data (Schema.org / JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "@id": "{{ url('/') }}/#organization",
+          "name": "سلسلة المحيط 2027 - The Ocean Series",
+          "url": "{{ url('/') }}",
+          "telephone": ["+201111168104", "+201027635545"]
+        },
+        {
+          "@type": "Person",
+          "@id": "{{ url('/') }}/#teacher",
+          "name": "عبد السلام رضوان",
+          "jobTitle": "Professor of English Language"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Asset Bundling -->
+    @vite([
+        'resources/css/app.css',
+        'resources/js/app.js'
+    ])
+
+    @stack('styles')
 </head>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<body class="bg-gray-100">
 
-    @yield('content')
+<body class="font-cairo bg-white text-gray-900 antialiased">
 
+    <div id="app">
+        @yield('content')
+    </div>
+
+    @stack('scripts')
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+new Swiper(".heroSlider",{
+
+loop:true,
+
+effect:"fade",
+
+autoplay:{
+delay:3500,
+disableOnInteraction:false,
+},
+
+pagination:{
+el:".swiper-pagination",
+clickable:true,
+},
+
+});
+
+</script>
 </body>
 
 </html>

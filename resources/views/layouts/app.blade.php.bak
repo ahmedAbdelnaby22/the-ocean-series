@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>@yield('title', 'سلسلة المحيط 2027 | منصة مستر عبدالسلام رضوان')</title>
+
+    <meta name="description"
+        content="@yield('description','المنصة التعليمية الرسمية لسلسلة المحيط 2027')">
+
+    <meta name="keywords"
+        content="تعلم اللغة الإنجليزية, سلسلة المحيط, عبدالسلام رضوان">
+
+    <meta name="author" content="Ahmed Abdelnaby">
+
+    <meta name="robots" content="index,follow">
+
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <link rel="icon" href="{{ asset('assets/images/logo/logo.png') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    @vite([
+        'resources/css/app.css',
+        'resources/js/app.js'
+    ])
+
+    @stack('styles')
+</head>
+
+<body class="font-cairo bg-white text-gray-900 antialiased">
+
+    <div id="app">
+
+        @yield('content')
+
+    </div>
+
+    @stack('scripts')
+
+</body>
+
+</html>
