@@ -1,8 +1,10 @@
 {{-- resources/views/components/gallery.blade.php --}}
+{{-- معرض الصور الثابت --}}
+
 <section id="gallery" class="section-padding bg-[#062f47]">
     <div class="container-custom">
         <div class="text-center mb-16 fade-up">
-            <span class="badge badge-primary mb-4">🖼️ المعرض</span>
+            <span class="badge badge-primary mb-4">🖼️ المعرض الثابت</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-white">
                 لحظات <span class="text-gradient">من رحلتنا</span>
             </h2>

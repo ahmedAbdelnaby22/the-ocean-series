@@ -11,13 +11,16 @@
     @include('components.topbar')
 
     {{-- شريط التنقل --}}
-    @include('components.navbar')
+    @include('components.navbar')  {{-- مرة واحدة فقط --}}
 
     {{-- شريط الأخبار --}}
     @include('components.news-ticker')
 
-    {{-- Hero --}}
+    {{-- القسم الرئيسي (Hero) --}}
     @include('components.hero')
+
+    {{-- السلايدر --}}
+    @include('components.slider')
 
     {{-- من نحن --}}
     @include('components.about')
@@ -28,7 +31,7 @@
     {{-- المجموعات --}}
     @include('components.groups')
 
-    {{-- معرض الصور --}}
+    {{-- معرض الصور الثابت --}}
     @include('components.gallery')
 
     {{-- الأخبار --}}
@@ -37,7 +40,7 @@
     {{-- اتصل بنا --}}
     @include('components.contact')
 
-    {{-- Footer --}}
+    {{-- التذييل --}}
     @include('components.footer')
 
 @endsection
