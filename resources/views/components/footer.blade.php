@@ -191,7 +191,7 @@
                 - جميع الحقوق محفوظة
                 <span class="mx-2">|</span> 
                 {{-- ✅ تم التعديل هنا --}}
-                <span class="text-white font-semibold">Design & Development Ahmed Team AI</span>
+                <span class="text-white font-semibold">Design & Development AhmedAhmed.AbdElnaby Team AI Team AI</span>
                 <span class="mx-2">|</span> 
                 <span class="text-gray-400">بالتعاون مع فريق العمل</span>
             </p>
