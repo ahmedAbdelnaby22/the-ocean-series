@@ -82,12 +82,11 @@
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- ============================================= -->
-    <!-- Asset Bundling (Vite) -->
+    <!-- Asset Bundling (Production) -->
     <!-- ============================================= -->
-    @vite([
-        'resources/css/app.css',
-        'resources/js/app.js'
-    ])
+    {{-- نستخدم asset() مباشرة لتحميل الملفات من مجلد build --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-C6kB7Ab_.css') }}">
+    <script type="module" src="{{ asset('build/assets/app-DYdTUths.js') }}"></script>
 
     @stack('styles')
 </head>
