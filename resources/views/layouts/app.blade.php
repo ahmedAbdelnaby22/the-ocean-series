@@ -82,11 +82,10 @@
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- ============================================= -->
-    <!-- Asset Bundling (Production) -->
+    <!-- CSS & JS Assets (روابط مباشرة HTTPS) -->
     <!-- ============================================= -->
-    {{-- نستخدم asset() مباشرة لتحميل الملفات من مجلد build --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-C6kB7Ab_.css') }}">
-    <script type="module" src="{{ asset('build/assets/app-DYdTUths.js') }}"></script>
+    <link rel="stylesheet" href="https://the-ocean-series-production.up.railway.app/build/assets/app-C6kB7Ab_.css">
+    <script src="https://the-ocean-series-production.up.railway.app/build/assets/app-DYdTUths.js" defer></script>
 
     @stack('styles')
 </head>
