@@ -84,9 +84,8 @@
     <!-- ============================================= -->
     <!-- CSS & JS Assets (روابط مباشرة HTTPS) -->
     <!-- ============================================= -->
-    <link rel="stylesheet" href="https://the-ocean-series-production.up.railway.app/build/assets/app-C6kB7Ab_.css">
-    <script src="https://the-ocean-series-production.up.railway.app/build/assets/app-DYdTUths.js" defer></script>
 
+@vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
 

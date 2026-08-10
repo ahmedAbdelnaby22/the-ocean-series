@@ -1,21 +1,21 @@
 {{-- resources/views/components/navbar.blade.php --}}
-{{-- شريط التنقل الرئيسي – نسخة نظيفة، لا تكرار --}}
+{{-- شريط التنقل الرئيسي – أسفل الـ Topbar --}}
 
 <nav 
     x-data="{ mobileMenuOpen: false }"
     role="navigation"
     aria-label="القائمة الرئيسية"
-    class="fixed top-0 left-0 w-full z-50 bg-[#101820] shadow-lg border-b border-[#f6c951]/10"
+    class="fixed top-12 left-0 w-full z-50 bg-[#101820] shadow-lg border-b border-[#f6c951]/10"
 >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 md:h-24 flex items-center justify-between" dir="rtl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between" dir="rtl">
 
-        {{-- الشعار --}}
+        {{-- الشعار (حجم متوازن) --}}
         <a href="/" class="flex items-center focus:outline-none focus:ring-2 focus:ring-[#f6c951] focus:ring-offset-2 focus:ring-offset-[#101820] rounded-lg p-1" aria-label="الرئيسية - THE OCEAN SERIES">
-            <img src="{{ asset('assets/images/logo/logo.png') }}" class="w-32 sm:w-36 md:w-40 hover:scale-105 transition-transform duration-300" alt="شعار THE OCEAN SERIES" loading="lazy">
+            <img src="{{ asset('assets/images/logo/logo.png') }}" class="w-24 sm:w-28 md:w-32 hover:scale-105 transition-transform duration-300" alt="شعار THE OCEAN SERIES" loading="lazy">
         </a>
 
         {{-- ============================================= --}}
-        {{-- القائمة الرئيسية (مرة واحدة فقط) --}}
+        {{-- القائمة الرئيسية --}}
         {{-- ============================================= --}}
         <ul class="hidden lg:flex gap-6 xl:gap-8 text-white font-bold text-sm xl:text-base">
             <li>
@@ -50,7 +50,7 @@
             </li>
         </ul>
 
-        {{-- زر الهمبرغر --}}
+        {{-- ===== زر الهمبرغر ===== --}}
         <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden p-2 rounded-lg hover:bg-[#f6c951]/10 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#f6c951] focus:ring-offset-2 focus:ring-offset-[#101820]" aria-label="فتح أو إغلاق القائمة" :aria-expanded="mobileMenuOpen ? 'true' : 'false'" aria-controls="mobile-menu">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -61,7 +61,7 @@
     </div>
 
     {{-- ============================================= --}}
-    {{-- القائمة المنسدلة للهواتف (مرة واحدة فقط) --}}
+    {{-- القائمة المنسدلة للهواتف --}}
     {{-- ============================================= --}}
     <div id="mobile-menu" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="lg:hidden bg-[#101820] border-t border-[#f6c951]/20 shadow-inner" role="menu" aria-label="القائمة المنبثقة">
         <ul class="flex flex-col items-end px-6 py-4 space-y-3 text-white font-bold text-base">

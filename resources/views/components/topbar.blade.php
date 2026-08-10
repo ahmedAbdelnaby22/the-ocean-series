@@ -1,9 +1,10 @@
 {{-- resources/views/components/topbar.blade.php --}}
 {{-- شريط الأخبار العلوي (ماركيه) --}}
+
 <div 
     role="complementary" 
     aria-label="شريط الأخبار العاجلة" 
-    class="relative z-50 overflow-hidden bg-[#062f47] border-b border-[#f6c951]/20 text-white shadow-sm"
+    class="relative z-40 overflow-hidden bg-[#062f47] border-b border-[#f6c951]/20 text-white shadow-sm"
 >
     {{-- حاوية الماركيه --}}
     <div class="marquee-wrapper overflow-hidden py-2 md:py-3">
@@ -112,11 +113,10 @@
     </div>
 </div>
 
-{{-- تضمين CSS المخصص للحركة --}}
 <style>
-    /* تعليق: حركة الماركيه مستمرة مع تحسين الأداء */
+    /* ===== حركة الماركيه ===== */
     .animate-marquee {
-        animation: marquee-scroll 40s linear infinite;
+        animation: marquee-scroll 20s linear infinite;
         will-change: transform;
     }
 
@@ -129,12 +129,12 @@
         }
     }
 
-    /* إيقاف الحركة مؤقتاً عند التمرير فوقها (تحسين UX) */
+    /* ===== إيقاف الحركة عند التمرير ===== */
     .marquee-wrapper:hover .animate-marquee {
         animation-play-state: paused;
     }
 
-    /* تحسين الوصولية: تقليل الحركة لمن يفضلون ذلك */
+    /* ===== تقليل الحركة ===== */
     @media (prefers-reduced-motion: reduce) {
         .animate-marquee {
             animation: none;
@@ -145,12 +145,9 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
-        .marquee-wrapper:hover .animate-marquee {
-            animation-play-state: running;
-        }
     }
 
-    /* تحسين التركيز لعناصر الوصول */
+    /* ===== تحسين التركيز ===== */
     .focus\:ring-offset-2:focus {
         outline: none;
         box-shadow: 0 0 0 2px #062f47, 0 0 0 4px #f6c951;
