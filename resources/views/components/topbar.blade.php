@@ -1,317 +1,115 @@
-{{-- resources/views/components/topbar.blade.php --}}
-{{-- =========================================================
-     THE OCEAN SERIES 2027
-     Topbar / News Marquee – إصدار مستقر مع حركة مضمونة
-     ========================================================= --}}
+{{-- شريط علوي رفيع باللون الأصفر مع أيقونات التواصل --}}
 
 <div
     role="complementary"
-    aria-label="شريط الأخبار والمعلومات"
-    class="relative z-40 w-full overflow-hidden bg-[#062f47] border-b border-[#f6c951]/20 text-white shadow-sm"
+    aria-label="شريط الترحيب"
+    class="topbar-wrapper w-full overflow-hidden bg-gradient-to-r from-[#f6c951] to-[#fbbf24] border-b border-[#f6c951]/30 text-[#062f47] shadow-sm"
 >
+    <div class="topbar-container relative py-1.5 md:py-2">
+        <div class="topbar-track flex items-center whitespace-nowrap text-xs md:text-sm lg:text-base font-semibold" style="animation: topbar-scroll 30s linear infinite;">
 
-    {{-- =====================================================
-         Marquee Wrapper
-         ===================================================== --}}
-    <div class="marquee-wrapper">
+            {{-- النص الأساسي + أيقونات --}}
+            <span class="topbar-item inline-flex items-center gap-2 mx-6 md:mx-10 lg:mx-12">
+                🌊
+                <span>مرحبا بكم في منصة المحيط في اللغة الانجليزية مع خبرة</span>
+                <span class="text-[#062f47] font-extrabold">8 سنوات</span>
+                <span>واكثر من العطاء والنجاح</span>
+                <span class="text-[#062f47] font-bold">Mr.Abdel Salam Radwan</span>
 
-        <div class="marquee">
-
-            {{-- =================================================
-                 1. الترحيب
-                 ================================================= --}}
-            <span class="marquee-item">
-                <span aria-hidden="true">🌊</span>
-                <span>مرحباً بكم في</span>
-                <span class="font-bold text-[#f6c951]">THE OCEAN SERIES 2027</span>
-                <span>مع</span>
-                <span class="font-bold text-[#f6c951]">Mr. Abdel Salam Radwan</span>
+                <span class="inline-flex items-center gap-2 mx-2">
+                    <a href="mailto:abdohanafi011111@gmail.com" class="hover:opacity-80 transition-opacity duration-300" aria-label="البريد الإلكتروني">
+                        <i class="fa-solid fa-envelope text-[#062f47] text-sm md:text-base"></i>
+                    </a>
+                    <span class="text-[#062f47]/40">|</span>
+                    <a href="https://wa.me/2011111168104" target="_blank" class="hover:opacity-80 transition-opacity duration-300" aria-label="واتساب">
+                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm md:text-base"></i>
+                    </a>
+                </span>
             </span>
 
-            {{-- 2. الخبرة --}}
-            <span class="marquee-item">
-                <span aria-hidden="true">🏆</span>
-                <span>خبرة أكثر من <strong class="text-[#f6c951]">8 سنوات</strong> في تدريس اللغة الإنجليزية</span>
-            </span>
+            {{-- تكرار النص --}}
+            <span class="topbar-item inline-flex items-center gap-2 mx-6 md:mx-10 lg:mx-12">
+                🌊
+                <span>مرحبا بكم في منصة المحيط في اللغة الانجليزية مع خبرة</span>
+                <span class="text-[#062f47] font-extrabold">8 سنوات</span>
+                <span>واكثر من العطاء والنجاح</span>
+                <span class="text-[#062f47] font-bold">Mr.Abdel Salam Radwan</span>
 
-            {{-- 3. الكتاب --}}
-            <span class="marquee-item">
-                <span aria-hidden="true">📚</span>
-                <span>سلسلة المحيط 2027 - كتاب الشرح والتدريبات</span>
-            </span>
-
-            {{-- 4. الامتحانات --}}
-            <span class="marquee-item">
-                <span aria-hidden="true">🎯</span>
-                <span>لا يخرج عنها أي امتحان بإذن الله</span>
-            </span>
-
-            {{-- 5. الموقع --}}
-            <span class="marquee-item">
-                <span aria-hidden="true">📍</span>
-                <span>البلينا - سوهاج - جمهورية مصر العربية</span>
-            </span>
-
-            {{-- 6. البريد الإلكتروني --}}
-            <span class="marquee-item">
-                <i class="fa-solid fa-envelope text-[#f6c951]" aria-hidden="true"></i>
-                <a href="mailto:abdohanafi011111@gmail.com" class="marquee-link" aria-label="إرسال بريد إلكتروني إلى abdohanafi011111@gmail.com">
-                    abdohanafi011111@gmail.com
-                </a>
-            </span>
-
-            {{-- 7. Facebook --}}
-            <span class="marquee-item">
-                <i class="fa-brands fa-facebook text-[#1877F2]" aria-hidden="true"></i>
-                <a href="https://www.facebook.com/share/19EzddwcQG/" target="_blank" rel="noopener noreferrer" class="marquee-link" aria-label="زيارة صفحتنا على فيسبوك">
-                    Facebook
-                </a>
-            </span>
-
-            {{-- 8. WhatsApp 1 --}}
-            <span class="marquee-item">
-                <i class="fa-brands fa-whatsapp text-[#25D366]" aria-hidden="true"></i>
-                <a href="https://wa.me/2011111168104" target="_blank" rel="noopener noreferrer" class="marquee-link" aria-label="تواصل معنا عبر واتساب على الرقم 01111168104">
-                    01111168104
-                </a>
-            </span>
-
-            {{-- 9. WhatsApp 2 --}}
-            <span class="marquee-item">
-                <i class="fa-brands fa-whatsapp text-[#25D366]" aria-hidden="true"></i>
-                <a href="https://wa.me/201027635545" target="_blank" rel="noopener noreferrer" class="marquee-link" aria-label="تواصل معنا عبر واتساب على الرقم 01027635545">
-                    01027635545
-                </a>
-            </span>
-
-            {{-- 10. الاتصال --}}
-            <span class="marquee-item">
-                <i class="fa-solid fa-phone text-[#f6c951]" aria-hidden="true"></i>
-                <a href="tel:+2011111168104" class="marquee-link" aria-label="الاتصال بنا على الرقم 01111168104">
-                    اتصل الآن
-                </a>
-            </span>
-
-            {{-- =================================================
-                 فاصل بصري
-                 ================================================= --}}
-            <span class="marquee-separator" aria-hidden="true">◆</span>
-
-            {{-- =================================================
-                 إعادة المحتوى مرتين لاستمرارية الحركة
-                 ================================================= --}}
-            <span class="marquee-item">
-                <span aria-hidden="true">🌊</span>
-                <span>مرحباً بكم في</span>
-                <span class="font-bold text-[#f6c951]">THE OCEAN SERIES 2027</span>
-                <span>مع</span>
-                <span class="font-bold text-[#f6c951]">Mr. Abdel Salam Radwan</span>
-            </span>
-
-            <span class="marquee-item">
-                <span aria-hidden="true">🏆</span>
-                <span>خبرة أكثر من <strong class="text-[#f6c951]">8 سنوات</strong> في تدريس اللغة الإنجليزية</span>
-            </span>
-
-            <span class="marquee-item">
-                <span aria-hidden="true">📚</span>
-                <span>سلسلة المحيط 2027 - كتاب الشرح والتدريبات</span>
-            </span>
-
-            <span class="marquee-item">
-                <span aria-hidden="true">🎯</span>
-                <span>لا يخرج عنها أي امتحان بإذن الله</span>
-            </span>
-
-            <span class="marquee-item">
-                <span aria-hidden="true">📍</span>
-                <span>البلينا - سوهاج - جمهورية مصر العربية</span>
-            </span>
-
-            <span class="marquee-item">
-                <i class="fa-solid fa-envelope text-[#f6c951]" aria-hidden="true"></i>
-                <a href="mailto:abdohanafi011111@gmail.com" class="marquee-link">abdohanafi011111@gmail.com</a>
-            </span>
-
-            <span class="marquee-item">
-                <i class="fa-brands fa-facebook text-[#1877F2]" aria-hidden="true"></i>
-                <a href="https://www.facebook.com/share/19EzddwcQG/" target="_blank" rel="noopener noreferrer" class="marquee-link">Facebook</a>
-            </span>
-
-            <span class="marquee-item">
-                <i class="fa-brands fa-whatsapp text-[#25D366]" aria-hidden="true"></i>
-                <a href="https://wa.me/2011111168104" target="_blank" rel="noopener noreferrer" class="marquee-link">01111168104</a>
-            </span>
-
-            <span class="marquee-item">
-                <i class="fa-brands fa-whatsapp text-[#25D366]" aria-hidden="true"></i>
-                <a href="https://wa.me/201027635545" target="_blank" rel="noopener noreferrer" class="marquee-link">01027635545</a>
-            </span>
-
-            <span class="marquee-item">
-                <i class="fa-solid fa-phone text-[#f6c951]" aria-hidden="true"></i>
-                <a href="tel:+2011111168104" class="marquee-link">اتصل الآن</a>
+                <span class="inline-flex items-center gap-2 mx-2">
+                    <a href="mailto:abdohanafi011111@gmail.com" class="hover:opacity-80 transition-opacity duration-300" aria-label="البريد الإلكتروني">
+                        <i class="fa-solid fa-envelope text-[#062f47] text-sm md:text-base"></i>
+                    </a>
+                    <span class="text-[#062f47]/40">|</span>
+                    <a href="https://wa.me/2011111168104" target="_blank" class="hover:opacity-80 transition-opacity duration-300" aria-label="واتساب">
+                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm md:text-base"></i>
+                    </a>
+                </span>
             </span>
 
         </div>
     </div>
 </div>
 
-{{-- =========================================================
-     Topbar Styles – مضمونة حتى لو لم تُحمّل app.css
-     ========================================================= --}}
 <style>
-
-    /* =====================================================
-       الحاوية الرئيسية
-       ===================================================== */
-    .marquee-wrapper {
+    .topbar-wrapper {
         position: relative;
+        z-index: 40;
         width: 100%;
-        height: 44px;
-        display: flex;
-        align-items: center;
+    }
+    .topbar-container {
+        width: 100%;
         overflow: hidden;
-        white-space: nowrap;
         direction: ltr;
     }
-
-    /* =====================================================
-       المحتوى المتحرك
-       ===================================================== */
-    .marquee {
+    .topbar-track {
         display: inline-flex;
         align-items: center;
         width: max-content;
         min-width: max-content;
-        flex-shrink: 0;
         white-space: nowrap;
-        direction: ltr;
-        font-size: 0.875rem;
-        font-weight: 600;
-        line-height: 1;
-        transform: translate3d(0, 0, 0);
         will-change: transform;
-        animation: ocean-marquee 30s linear infinite !important;
     }
-
-    /* =====================================================
-       كل عنصر في الشريط
-       ===================================================== */
-    .marquee-item {
+    .topbar-item {
         display: inline-flex;
         align-items: center;
+        flex-shrink: 0;
         gap: 0.5rem;
-        margin-inline: 1.5rem;
-        flex-shrink: 0;
-        white-space: nowrap;
     }
-
-    /* =====================================================
-       الروابط
-       ===================================================== */
-    .marquee-link {
-        color: #ffffff;
-        text-decoration: none;
-        transition: color 300ms ease, opacity 300ms ease;
+    @keyframes topbar-scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
     }
-
-    .marquee-link:hover {
-        color: #f6c951;
-        opacity: 0.9;
-    }
-
-    /* =====================================================
-       الفاصل
-       ===================================================== */
-    .marquee-separator {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-inline: 1rem;
-        color: #f6c951;
-        font-size: 0.65rem;
-        opacity: 0.8;
-        flex-shrink: 0;
-    }
-
-    /* =====================================================
-       Animation – الحركة الأساسية
-       ===================================================== */
-    @keyframes ocean-marquee {
-        0% {
-            transform: translate3d(100%, 0, 0);
-        }
-        100% {
-            transform: translate3d(-100%, 0, 0);
-        }
-    }
-
-    /* =====================================================
-       إيقاف الحركة عند مرور الماوس
-       ===================================================== */
-    .marquee-wrapper:hover .marquee {
+    .topbar-wrapper:hover .topbar-track {
         animation-play-state: paused !important;
     }
-
-    /* =====================================================
-       Tablet / Desktop
-       ===================================================== */
-    @media (min-width: 768px) {
-        .marquee-wrapper {
-            height: 48px;
-        }
-        .marquee {
-            font-size: 1rem;
-            animation-duration: 35s !important;
-        }
-        .marquee-item {
-            margin-inline: 2rem;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .marquee {
-            font-size: 1.05rem;
-            animation-duration: 40s !important;
-        }
-        .marquee-item {
-            margin-inline: 2.5rem;
-        }
-    }
-
-    /* =====================================================
-       Mobile
-       ===================================================== */
     @media (max-width: 640px) {
-        .marquee-wrapper {
-            height: 38px;
+        .topbar-track {
+            animation-duration: 20s !important;
         }
-        .marquee {
-            font-size: 0.75rem;
-            animation-duration: 25s !important;
+        .topbar-item {
+            font-size: 0.6rem;
+            gap: 0.25rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
         }
-        .marquee-item {
-            margin-inline: 0.75rem;
-            gap: 0.3rem;
+        .topbar-container {
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
         }
-        .marquee-separator {
-            margin-inline: 0.4rem;
+        .topbar-item .fa-envelope,
+        .topbar-item .fa-whatsapp {
+            font-size: 0.7rem !important;
         }
     }
-
-    /* =====================================================
-       تقليل الحركة (إتاحة التمرير اليدوي)
-       ===================================================== */
     @media (prefers-reduced-motion: reduce) {
-        .marquee {
+        .topbar-track {
             animation: none !important;
-            transform: translate3d(0, 0, 0) !important;
+            transform: translateX(0) !important;
         }
-        .marquee-wrapper {
+        .topbar-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
         }
     }
-
 </style>

@@ -17,3 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+# Local video files - stored in Cloudflare R2
+resources/views/videos/*.mp4

@@ -53,6 +53,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- ============================================= -->
+    <!-- Font Awesome (لأيقونات التواصل) -->
+    <!-- ============================================= -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ============================================= -->
     <!-- Structured Data (Schema.org / JSON-LD) -->
     <!-- ============================================= -->
     <script type="application/ld+json">
@@ -82,15 +87,53 @@
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- ============================================= -->
-    <!-- CSS & JS Assets (روابط مباشرة HTTPS) -->
+    <!-- Asset Bundling (Vite) -->
     <!-- ============================================= -->
+    @vite([
+        'resources/css/app.css',
+        'resources/js/app.js'
+    ])
 
-@vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
 
 <body class="font-cairo bg-white text-gray-900 antialiased">
 
+    <!-- ============================================= -->
+    <!-- شاشة الترحيب (Splash Screen) -->
+    <!-- ============================================= -->
+    <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.8s ease; font-family: 'Tajawal', sans-serif;">
+
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 30px;">
+            <div style="width: 100px; height: 100px; border: 4px solid rgba(255, 215, 0, 0.15); border-top: 4px solid #fbbf24; border-right: 4px solid #f59e0b; border-radius: 50%; animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;"></div>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 38px; font-weight: 900; color: #fbbf24; letter-spacing: 2px; text-shadow: 0 0 30px rgba(251, 191, 36, 0.3);">و</div>
+        </div>
+
+        <h1 style="color: white; font-size: 24px; font-weight: 600; margin: 0; letter-spacing: 4px;">مرحباً بك</h1>
+        <p style="color: #94a3b8; font-size: 14px; margin-top: 8px; opacity: 0.8;">نحن نجهز مساحتك الخاصة...</p>
+    </div>
+
+    <style>
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        #splash-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+
+    <script>
+        setTimeout(() => {
+            const splash = document.getElementById('splash-screen');
+            splash.classList.add('fade-out');
+            setTimeout(() => { splash.style.display = 'none'; }, 800);
+        }, 2000);
+    </script>
+
+    <!-- ============================================= -->
+    <!-- المحتوى الرئيسي -->
+    <!-- ============================================= -->
     <div id="app">
         @yield('content')
     </div>
@@ -103,9 +146,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // =============================================
-        // تفعيل Swiper إذا كان موجوداً في الصفحة
-        // =============================================
         document.addEventListener('DOMContentLoaded', function() {
             const heroSlider = document.querySelector('.heroSlider');
             if (heroSlider) {
