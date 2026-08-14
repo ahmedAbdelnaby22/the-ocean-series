@@ -102,7 +102,12 @@
                         ></span>
                     </a>
                 </li>
-
+<li>
+    <a href="{{ route('services') }}" class="hover:text-[#f6c951] transition-colors duration-300 relative group focus:outline-none focus:ring-2 focus:ring-[#f6c951] focus:ring-offset-2 focus:ring-offset-[#101820] rounded px-2 py-1">
+        💼 خدماتي
+        <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-[#f6c951] transition-all duration-300 group-hover:w-full"></span>
+    </a>
+</li>
             </ul>
 
 

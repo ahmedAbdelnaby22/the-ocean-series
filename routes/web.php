@@ -15,3 +15,6 @@ Route::get('/', function () {
 
 // 🎥 Routes الخاصة بالفيديوهات
 Route::resource('videos', VideoController::class);
+Route::get('/services', function () {
+    return view('pages.services');
+})->name('services');
