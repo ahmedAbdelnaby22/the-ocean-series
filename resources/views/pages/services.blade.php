@@ -51,8 +51,8 @@
             <p class="text-3xl font-bold text-white mt-2">📱 01112465676</p>
             <p class="text-sm text-gray-400 mt-2">(أرسل صورة الإيصال على واتساب بعد الدفع)</p>
             <div class="flex justify-center gap-4 mt-6">
-                <a href="https://wa.me/2011111168104" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full transition">📲 واتساب</a>
-                <a href="mailto:abdohanafi011111@gmail.com" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">✉️ إيميل</a>
+                <a href="https://wa.me/20112465676" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full transition">📲 واتساب</a>
+                <a href="ahmed.abdelnaby.log@gmail.com" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">✉️ إيميل</a>
             </div>
         </div>
 

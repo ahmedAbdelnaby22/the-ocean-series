@@ -53,35 +53,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- ============================================= -->
-    <!-- Font Awesome (لأيقونات التواصل) -->
-    <!-- ============================================= -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- ============================================= -->
-    <!-- Structured Data (Schema.org / JSON-LD) -->
-    <!-- ============================================= -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "EducationalOrganization",
-          "@id": "{{ url('/') }}/#organization",
-          "name": "سلسلة المحيط 2027 - The Ocean Series",
-          "url": "{{ url('/') }}",
-          "telephone": ["+201111168104", "+201027635545"]
-        },
-        {
-          "@type": "Person",
-          "@id": "{{ url('/') }}/#teacher",
-          "name": "عبد السلام رضوان",
-          "jobTitle": "Professor of English Language"
-        }
-      ]
-    }
-    </script>
-
-    <!-- ============================================= -->
     <!-- Swiper CSS (للسلايدر) -->
     <!-- ============================================= -->
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
@@ -100,35 +71,98 @@
 <body class="font-cairo bg-white text-gray-900 antialiased">
 
     <!-- ============================================= -->
-    <!-- شاشة الترحيب (Splash Screen) -->
+    <!-- 🆕 شاشة الترحيب الاحترافية (Splash Screen) -->
     <!-- ============================================= -->
-    <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.8s ease; font-family: 'Tajawal', sans-serif;">
+    <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #0a1a2e 0%, #010407 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: opacity 1.2s ease; font-family: 'Cairo', sans-serif;">
 
-        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 30px;">
-            <div style="width: 100px; height: 100px; border: 4px solid rgba(255, 215, 0, 0.15); border-top: 4px solid #fbbf24; border-right: 4px solid #f59e0b; border-radius: 50%; animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;"></div>
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 38px; font-weight: 900; color: #fbbf24; letter-spacing: 2px; text-shadow: 0 0 30px rgba(251, 191, 36, 0.3);">و</div>
-        </div>
+        {{-- العنصر المتوهج خلف اللوجو --}}
+        <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, rgba(255, 215, 0, 0) 70%); filter: blur(20px); animation: glowFlash 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; pointer-events: none;"></div>
 
-        <h1 style="color: white; font-size: 24px; font-weight: 600; margin: 0; letter-spacing: 4px;">مرحباً بك</h1>
-        <p style="color: #94a3b8; font-size: 14px; margin-top: 8px; opacity: 0.8;">نحن نجهز مساحتك الخاصة...</p>
+        {{-- صورة اللوجو --}}
+        <img src="{{ asset('assets/images/logo/logo.png') }}" alt="شعار THE OCEAN SERIES" style="width: 320px; max-width: 90vw; height: auto; border-radius: 20px; position: relative; z-index: 1; animation: royalEntrance 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, goldPulse 3s ease-in-out 2s infinite; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));">
+
+        {{-- نص ترحيبي أسفل الشعار --}}
+        <h2 style="margin-top: 25px; color: #d4af37; font-size: 1.8rem; letter-spacing: 3px; opacity: 0; animation: textFade 1s ease-out 1.5s forwards; z-index: 1; font-weight: 300;">مرحباً بكم في</h2>
+        <h2 style="color: #f6c951; font-size: 2.5rem; letter-spacing: 5px; opacity: 0; animation: textFade 1s ease-out 1.8s forwards; z-index: 1; font-weight: 700;">THE OCEAN SERIES</h2>
     </div>
 
+    {{-- CSS الخاص بشاشة الترحيب --}}
     <style>
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
+        /* ===== حركة الدخول الملكي ===== */
+        @keyframes royalEntrance {
+            0% {
+                transform: scale(0.2) rotate(-40deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1) rotate(4deg);
+                opacity: 1;
+            }
+            70% {
+                transform: scale(0.95) rotate(-1deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
         }
+
+        /* ===== توهج خلفي ===== */
+        @keyframes glowFlash {
+            0% {
+                transform: scale(0);
+                opacity: 0.9;
+            }
+            60% {
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* ===== نبض ذهبي مستمر ===== */
+        @keyframes goldPulse {
+            0%, 100% {
+                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3)) brightness(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.8)) brightness(1.1);
+            }
+        }
+
+        /* ===== ظهور النصوص ===== */
+        @keyframes textFade {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 0.9;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== اختفاء الشاشة ===== */
         #splash-screen.fade-out {
             opacity: 0;
             pointer-events: none;
         }
     </style>
 
+    {{-- JavaScript للتحكم في وقت الاختفاء --}}
     <script>
+        // ننتظر 2.8 ثانية (لإكمال الحركات) ثم نخفي الشاشة
         setTimeout(() => {
             const splash = document.getElementById('splash-screen');
             splash.classList.add('fade-out');
-            setTimeout(() => { splash.style.display = 'none'; }, 800);
-        }, 2000);
+            setTimeout(() => {
+                splash.style.display = 'none';
+            }, 1200);
+        }, 2800);
     </script>
 
     <!-- ============================================= -->

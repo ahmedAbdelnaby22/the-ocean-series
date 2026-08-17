@@ -31,7 +31,7 @@ return [
         ],
 
         // =============================================
-        // Cloudflare R2 Disk
+        // Cloudflare R2 Disk (مع حل SSL)
         // =============================================
         'r2' => [
             'driver' => 's3',
@@ -43,7 +43,9 @@ return [
             'use_path_style_endpoint' => false,
             'visibility' => 'public',
             'url' => env('R2_URL'),
-            'throw' => true,
+            'http' => [
+                'verify' => false,
+            ],
         ],
 
     ],

@@ -1,5 +1,5 @@
 {{-- resources/views/videos/show.blade.php --}}
-{{-- صفحة عرض وتشغيل الفيديو (تدعم جميع الصيغ) --}}
+{{-- صفحة عرض وتشغيل الفيديو --}}
 
 @extends('layouts.app')
 
@@ -9,12 +9,13 @@
 <div class="container mx-auto px-4 py-8 max-w-4xl">
     <div class="bg-[#1a2533] rounded-2xl overflow-hidden shadow-2xl border border-[#f6c951]/10">
 
-        {{-- مشغل الفيديو --}}
+        {{-- مشغل الفيديو (مضمون لجميع الصيغ) --}}
         <div class="aspect-video bg-[#101820] flex items-center justify-center">
-            @if($video->video_url)
+            @if($video->video_path)
                 <video controls class="w-full h-full">
-                    {{-- استخدام mime_type الفعلي للملف، مع قيمة افتراضية --}}
-                    <source src="{{ $video->video_url }}" type="{{ $video->mime_type ?? 'video/mp4' }}">
+                    {{-- استخدام التخزين المحلي (public) مع mime_type الفعلي --}}
+                    <source src="{{ Storage::disk('public')->url($video->video_path) }}" 
+                            type="{{ $video->mime_type ?? 'video/mp4' }}">
                     متصفحك لا يدعم تشغيل الفيديو.
                 </video>
             @else
@@ -44,8 +45,8 @@
                 <a href="{{ route('videos.index') }}" class="px-6 py-2 bg-[#f6c951] text-[#062f47] font-bold rounded-full hover:bg-yellow-400 transition duration-300">
                     <i class="fa-solid fa-arrow-right"></i> العودة للقائمة
                 </a>
-                @if($video->video_url)
-                    <a href="{{ $video->video_url }}" target="_blank" class="px-6 py-2 bg-[#f6c951]/10 text-[#f6c951] font-bold rounded-full hover:bg-[#f6c951] hover:text-[#062f47] transition duration-300">
+                @if($video->video_path)
+                    <a href="{{ Storage::disk('public')->url($video->video_path) }}" target="_blank" class="px-6 py-2 bg-[#f6c951]/10 text-[#f6c951] font-bold rounded-full hover:bg-[#f6c951] hover:text-[#062f47] transition duration-300">
                         <i class="fa-solid fa-external-link-alt"></i> فتح الرابط مباشرة
                     </a>
                 @endif
