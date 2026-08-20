@@ -31,8 +31,8 @@ RUN composer install --no-dev --optimize-autoloader
 # تثبيت حزم Node.js وبناء Vite
 RUN npm install && npm run build
 
-# تعيين المنفذ الافتراضي (سيتم استبداله بـ PORT من Railway)
-EXPOSE ${PORT:-8000}
+# تعيين المنفذ الذي سيعمل عليه التطبيق (مطابق لما في CMD)
+EXPOSE 8080
 
-# أمر التشغيل (يستخدم متغير PORT من Railway مع قيمة افتراضية 8080)
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
+# أمر التشغيل (منفذ ثابت لتجنب أي تعارض مع متغيرات Railway)
+CMD php artisan serve --host=0.0.0.0 --port=8080
